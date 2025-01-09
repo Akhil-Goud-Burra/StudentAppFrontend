@@ -1,0 +1,41 @@
+<!-- Login Student -->
+<div class="loginstudent">
+
+    <div class="container p-5 my-5 bg-dark text-white">
+
+      <h1>Creating Student Details</h1>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()"> 
+
+          <div formGroupName="account">
+
+              <div class="form-group">
+                  <label for="username">Student Email:</label> 
+                  <input formControlName="username" id="username" type="text" class="form-control" required>
+              </div>
+
+              <br>
+
+              <div class="form-group">
+                  <label for="Password">Student Password:</label> 
+                  <input formControlName="Password" id="Password" type="text" class="form-control" required>
+              </div>
+
+          </div>
+
+          <br>
+
+          <button class="btn btn-primary" type="submit">Login</button>
+          
+      </form>
+
+      <br>
+
+        <!-- Error Message -->
+        <div *ngIf="errorMessage" class="alert alert-danger">
+            {{ errorMessage }}
+            </div>
+      
+  </div>
+
+  
+</div>
